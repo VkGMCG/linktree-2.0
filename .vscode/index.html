@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="">
+  <!-- "class" é para quando houverem outros modos -->
+<head>
+  <!-- head = dados por trás do site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<!-- os códigos acima são os dados de fonte de texto, pegos no fonts.google.com -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linktree 2.0</title>
+  <!-- é o nome da página -->
+  <link rel="stylesheet" href="./styls.css">
+  <!-- é como linkar o html com o css - href = link -->
+</head>
+<body>
+  <!-- body = dados que aparecem no site -->
+  
+  <div id="container">
+    <div id="profile">
+      <img src="./assets/avatar.png" alt="foto de perfil">
+      <!-- src = onde a img está; alt = descrição da img -->
+      <p>@vk.gmcg</p>
+    </div>
+
+    <div id="switch" onclick="toggleMode()">
+      <!-- "onclick" define que o objeto será ativo com um clique.-->
+      <button></button>
+      <span></span>
+    </div>
+
+    <ul>
+      <!-- ul = criar listas não ordenadas-->
+      <li>
+        <!-- li = nome das listas -->
+        <a href="https://www.instagram.com/vk.gmcg/" target="_blank">Instagram</a>
+        <!-- "#" = link nulo; target="_blank" = abre o link em outra aba -->
+      </li>
+      <li>
+        <a href="https://www.tiktok.com/@vikgmcg" target="_blank">TikTok</a>
+      </li>
+      <li>
+        <a href="https://linktr.ee/puroouroverde" target="_blank">Veja meu projeto</a>
+      </li>
+      <li>
+        <a href="https://linktr.ee/vkzinho" target="_blank">Demais contatos</a>
+      </li>
+    </ul>
+    <div id="social-links">
+      
+      <a href="https://github.com/viktooooorrrgmcg" target="_blank">
+        <ion-icon name="logo-github"></ion-icon>
+      </a>
+
+      <a href="https://instagram.com/vk.gmcg" target="_blank">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+      
+      <a href="https://www.youtube.com/channel/UCGvVkPGFQYeBBuvbqXNy07w" target="_blank">
+        <ion-icon name="logo-youtube"></ion-icon>
+      </a>
+      
+      <a href="https://linkedin.com/in/victormedeirosgato" target="_blank">
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </a>
+
+    </div>
+    <footer>
+      <!-- Geralmente é usado para fazer rodapés-->
+      Feito com ♥ pelo <a href="#">Victor</a>
+    </footer>
+  </div>
+
+  <script 
+    type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script 
+    nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+  <!-- As linhas de código acima são para instalação dos icons, pelo ionicons -->
+  <script src="./script.js"></script>
+  <!-- Aqui esta sendo ligado o HTML ao JS. -->
+</body>
+</html>

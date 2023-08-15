@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  /* margem - funciona como um relogio, medindo cima, direita, baixo e esquerda. Ou seja, se codar como margin: 1 0 2 0, a margem será de 1 emcima, 0 na direita, 2 embaixo, e 0 na esquerda.*/
+  padding: 0;
+  /* preenchimento interno */
+  box-sizing: border-box;
+  /* a medida do tamanho da caixa (box-sizing) esta pelo tamanho da borda (border-box), mantendo assim a medida da margem que for posta */
+}
+
+:root {
+  /* É a raiz */
+  --text-color: white;
+  /* Com -- pode-se dar nome a cores e afins */
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+body {
+  /* 
+  background-image: url(./assets/bg-mobile.jpg);
+   escolhe a pasta (./), e depois a imagem (/)
+
+  background-repeat: no-repeat;
+   controla as repetições 
+
+  background-position: top center;
+   controla a posição 
+
+  background-size: cover;
+   controla o preenchimento (cover = total; contain = tamanho do "body") 
+  */
+
+  /* É possivel colocar todo o código em uma única linha: 
+  background: color - image - repeat - position/size
+  */
+
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  /* "*" é o seletor universal */
+  font-family: "Inter", sans-serif;
+  /* está é a linha de código que aplica a fonte de texto, também dada pelo google */
+  color: var(--text-color);
+  /* todos os textos serão dessa cor - pode ser dada por nome ou código */
+}
+
+#container {
+  /* # é como ligar um elemento do html com o css */
+  width: 360px;
+  /* largura
+  height: 712px;
+   altura - no CSS geralmente a altura segue de acordo com o conteúdo da página, ou seja, não é necessario*/
+  margin: 56px auto 0px;
+  /* auto = centraliza pelas margens laterais - auto está sendo aplicado nos dois lados, assim como, se não houvesse o 0px, cima e baixo mediriam 56px.
+  padding-top: 56px também serviria*/
+  padding: 0 24px;
+}
+
+/*PS: no HTML, div é um elemento block (força um espaço único para cada elemento), mas img é um elemento inline (tudo em uma única linha), logo, "margin" não funciona em img.*/
+
+#profile {
+  text-align: center;
+  /* existem duas opções para solucionar o margin, uma é forçar o img a mudar para block (display: block), e a outra é usar o text-align no "pai" dos elementos.
+PS: codar no "pai" fará com que toda a familia tenha a mesma propriedade.*/
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px;
+}
+
+#profile p {
+  font-weight: 500;
+  /* grossura da fonte */
+  line-height: 24px;
+  /* altura da linha - também é possivel ajustar a largura da letra (font-size), porém, por padrão, qualquer texto terá font-size = 16px */
+  margin-top: 8px;
+}
+
+#switch {
+  position: relative;
+  /* Permite que a posição fique relativa a caixa, não ao background todo. */
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  /* Cria uma sobreposição de camadas */
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  /* É possivel ajustar a camada */
+  transform: translateY(-50%);
+  /* Cria diversas ações, como rotação, etc. "translateY" permite mover pela reta y. */
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+  /* O left retorna ao local inicial. */
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* links */
+ul {
+  list-style: none;
+  /* Estilo da lista: nulo - faz com que os pontos (bolinhas na frente da lista) sumam. 
+  "gap:" serve para dar espaço entre os elementos de uma seção.
+  */
+  display: flex;
+  /* Faz com que o "a" tenha um ajuste flexivel */
+  flex-direction: column;
+  /* Ao aplicar "flex", o objeto fica inline. Com esse código ele transforma as "li" em colunas, novamente. */
+  gap: 16px;
+  /* Gera um espaçamento entre as caixas */
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  align-items: center;
+  /* Alinha verticalmente */
+  justify-content: center;
+  /* Alinha horizontalmente */
+  padding: 16px 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  /* Cria uma borda*/
+  border-radius: 8px;
+  /* Arredenda borda */
+  -webkit-backdrop-filter: blur(4px);
+  /* Vai aplicar um filtro na caixa, neste caso de "blur". O "-webkit" é uma exigência para que o código funcione no browser "Safari". */
+  text-decoration: none;
+  /* Mexe com as decorações do texto, neste caso tirou a linha de link. */
+  font-weight: 500;
+  transition: background 0.2s;
+  /* Força uma transição, podendo ser de uma caixa especifica, ou da página toda (all). */
+}
+
+/* pseudo-selector - passar o mouse por cima */
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+/* social-links */
+#social-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+
+  padding: 24px 0;
+
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  transition: background 0.2s;
+  border-radius: 50%;
+  /* Cria um circulo */
+}
+
+#social-links a:hover {
+ background: var(--highlight-color);
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
