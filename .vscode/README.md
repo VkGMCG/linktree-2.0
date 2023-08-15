@@ -1,7 +1,7 @@
 <h1 align="center"> Linktree 2.0 </h1>
 
 <p align="center">
-Meu inicío, dentro da área da programação, através do curso DevLinks. <br/>
+Meu início, dentro da área da programação, através do curso DevLinks. <br/>
 </p>
 
 <p align="center">
@@ -34,7 +34,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 Este é um agregador de links para usar como cartão de visitas online, criado através do curso DevLinks, da Rocketseat.
 
-- [Acesse o projeto finalizado, online]()
+- [Acesse o projeto finalizado, online](https://github.com/VkGMCG/linktree-2.0/tree/main/.vscode)
 
 - [Acesse o projeto original](https://maykbrito.github.io/devlinks)
 
