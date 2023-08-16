@@ -60,10 +60,12 @@ body * {
 
 #container {
   /* # é como ligar um elemento do html com o css */
-  width: 360px;
+  width: 100%;
   /* largura
   height: 712px;
    altura - no CSS geralmente a altura segue de acordo com o conteúdo da página, ou seja, não é necessario*/
+  max-width: 588px;
+  /* Cria um limite até onde a box de conyteúdo irá esticar */
   margin: 56px auto 0px;
   /* auto = centraliza pelas margens laterais - auto está sendo aplicado nos dois lados, assim como, se não houvesse o 0px, cima e baixo mediriam 56px.
   padding-top: 56px também serviria*/
