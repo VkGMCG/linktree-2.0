@@ -34,7 +34,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 Este é um agregador de links para usar como cartão de visitas online, criado através do curso DevLinks, da Rocketseat.
 
-- [Acesse o projeto finalizado, online](https://github.com/VkGMCG/linktree-2.0/tree/main/.vscode)
+- [Acesse o projeto finalizado, online](https://VKGMCG.github.io/linktree-2.0/)
 
 - [Acesse o projeto original](https://maykbrito.github.io/devlinks)
 
