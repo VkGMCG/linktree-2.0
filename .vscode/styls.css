@@ -118,12 +118,17 @@ PS: codar no "pai" fará com que toda a familia tenha a mesma propriedade.*/
   /* É possivel ajustar a camada */
   transform: translateY(-50%);
   /* Cria diversas ações, como rotação, etc. "translateY" permite mover pela reta y. */
+
+  animation: slide-off 0.2s;
+  /* Aqui está sendo reproduzido um código que linca o botão ao @keyframes.*/
 }
 
 .light #switch button {
-  right: 0;
+  animation: slide-on 0.2s forwards;
+  /* "forwards" faz com que a animação não volte ao estado inicial, antes de realizar outro clique, mantendo o que foi programado no @keyframes.
+
   left: initial;
-  /* O left retorna ao local inicial. */
+   O left retorna ao local inicial. */
 }
 
 #switch span {
@@ -134,6 +139,10 @@ PS: codar no "pai" fará com que toda a familia tenha a mesma propriedade.*/
   border: 1px solid var(--stroke-color);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 9999px;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 /* links */
@@ -220,5 +229,24 @@ footer {
 
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animation */
+
+@keyframes slide-on {
+  from {
+    left: 0;
+  } to {
+    left: 50%;
+  }
+  /* Começa em left 0 e termina em left 50%(do outro lado do left). Slide-on é um nome aleatório.*/
+}
+
+@keyframes slide-off {
+  from {
+    left: 50%;
+  } to {
+    left: 0;
   }
 }
